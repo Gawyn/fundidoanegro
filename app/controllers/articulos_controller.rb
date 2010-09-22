@@ -1,4 +1,5 @@
 class ArticulosController < ApplicationController
+	before_filter :authenticate_admin!, :except => [:index, :show]
   # GET /articulos
   # GET /articulos.xml
   def index

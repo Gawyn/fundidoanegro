@@ -1,4 +1,5 @@
 class CriticasController < ApplicationController
+	before_filter :authenticate_user!, :except => [:index, :show]
   # GET /criticas
   # GET /criticas.xml
   def index

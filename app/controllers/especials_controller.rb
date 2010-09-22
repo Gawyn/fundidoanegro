@@ -1,4 +1,5 @@
 class EspecialsController < ApplicationController
+	before_filter :authenticate_user!, :except => [:index, :show]
   # GET /especials
   # GET /especials.xml
   def index
