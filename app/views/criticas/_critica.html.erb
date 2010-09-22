@@ -1,0 +1,6 @@
+<%= div_for critica do %>
+<h2><%= link_to_unless_current h(critica.title), critica %></h2><br>
+Fecha <%= (critica.created_at) %>
+<%= raw(critica.body) %>
+<% end %>
+

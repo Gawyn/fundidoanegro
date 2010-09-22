@@ -1,5 +1,9 @@
 class ArticulosController < ApplicationController
 	before_filter :authenticate_admin!, :except => [:index, :show]
+  uses_tiny_mce :options => {
+                              :theme => 'advanced',
+                              :plugins => %w{ table fullscreen }
+                            }
   # GET /articulos
   # GET /articulos.xml
   def index

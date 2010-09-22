@@ -1,0 +1,6 @@
+<%= div_for especial do %>
+<h2><%= link_to_unless_current h(especial.title), especial %></h2><br>
+Fecha <%= (especial.created_at) %>
+<%= raw(especial.body) %>
+<% end %>
+

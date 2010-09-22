@@ -1,5 +1,9 @@
 class FestivalsController < ApplicationController
 	before_filter :authenticate_user!, :except => [:index, :show]
+  uses_tiny_mce :options => {
+                              :theme => 'advanced',
+                              :plugins => %w{ table fullscreen }
+                            }
   # GET /festivals
   # GET /festivals.xml
   def index

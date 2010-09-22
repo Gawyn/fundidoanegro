@@ -1,5 +1,9 @@
 class EspecialsController < ApplicationController
 	before_filter :authenticate_user!, :except => [:index, :show]
+  uses_tiny_mce :options => {
+                              :theme => 'advanced',
+                              :plugins => %w{ table fullscreen }
+                            }
   # GET /especials
   # GET /especials.xml
   def index

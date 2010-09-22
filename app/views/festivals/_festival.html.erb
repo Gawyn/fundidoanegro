@@ -1,0 +1,6 @@
+<%= div_for festival do %>
+<h2><%= link_to_unless_current h(festival.title), festival %></h2><br>
+Fecha <%= (festival.created_at) %>
+<%= raw(festival.body) %>
+<% end %>
+

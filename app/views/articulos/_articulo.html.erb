@@ -1,0 +1,6 @@
+<%= div_for articulo do %>
+<h2><%= link_to_unless_current h(articulo.title), articulo %></h2><br>
+Fecha <%= (articulo.created_at) %>
+<%= raw(articulo.body) %>
+<% end %>
+

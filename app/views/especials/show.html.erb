@@ -1,15 +1,7 @@
-<p id="notice"><%= notice %></p>
+<%= render :partial => @especial %>
 
-<p>
-  <b>Title:</b>
-  <%= @especial.title %>
-</p>
-
-<p>
-  <b>Body:</b>
-  <%= @especial.body %>
-</p>
-
-
+<% if admin_signed_in? %>
 <%= link_to 'Edit', edit_especial_path(@especial) %> |
+<%= link_to 'Destroy', @especial, :method => :delete, :confirm => "Are you sure?" %> |
 <%= link_to 'Back', especials_path %>
+<% end %>
