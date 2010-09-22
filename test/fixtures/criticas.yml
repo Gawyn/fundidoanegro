@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  body: MyText
+  title_film: MyString
+  director: MyString
+  year: 1
+  country: MyString
+  nota: 1
+
+two:
+  title: MyString
+  body: MyText
+  title_film: MyString
+  director: MyString
+  year: 1
+  country: MyString
+  nota: 1

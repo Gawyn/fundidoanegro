@@ -1,0 +1,35 @@
+<h1>Listing criticas</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Title film</th>
+    <th>Director</th>
+    <th>Year</th>
+    <th>Country</th>
+    <th>Nota</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @criticas.each do |critica| %>
+  <tr>
+    <td><%= critica.title %></td>
+    <td><%= critica.body %></td>
+    <td><%= critica.title_film %></td>
+    <td><%= critica.director %></td>
+    <td><%= critica.year %></td>
+    <td><%= critica.country %></td>
+    <td><%= critica.nota %></td>
+    <td><%= link_to 'Show', critica %></td>
+    <td><%= link_to 'Edit', edit_critica_path(critica) %></td>
+    <td><%= link_to 'Destroy', critica, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Critica', new_critica_path %>

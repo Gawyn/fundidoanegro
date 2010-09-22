@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @critica.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @critica.body %>
+</p>
+
+<p>
+  <b>Title film:</b>
+  <%= @critica.title_film %>
+</p>
+
+<p>
+  <b>Director:</b>
+  <%= @critica.director %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%= @critica.year %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @critica.country %>
+</p>
+
+<p>
+  <b>Nota:</b>
+  <%= @critica.nota %>
+</p>
+
+
+<%= link_to 'Edit', edit_critica_path(@critica) %> |
+<%= link_to 'Back', criticas_path %>
