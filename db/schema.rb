@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100922230919) do
+ActiveRecord::Schema.define(:version => 20100926214625) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(:version => 20100922230919) do
   create_table "articulos", :force => true do |t|
     t.string   "title"
     t.text     "body"
+    t.integer  "especial_id"
+    t.boolean  "portada"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -48,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20100922230919) do
     t.integer  "year"
     t.string   "country"
     t.integer  "nota"
+    t.integer  "especial_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -55,13 +58,12 @@ ActiveRecord::Schema.define(:version => 20100922230919) do
   create_table "especials", :force => true do |t|
     t.string   "title"
     t.text     "body"
+    t.boolean  "portada"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "festivals", :force => true do |t|
-    t.string   "title"
-    t.text     "body"
+  create_table "portadas", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

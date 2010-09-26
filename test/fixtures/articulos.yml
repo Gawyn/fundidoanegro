@@ -3,7 +3,11 @@
 one:
   title: MyString
   body: MyText
+  especial_id: 1
+  portada: false
 
 two:
   title: MyString
   body: MyText
+  especial_id: 1
+  portada: false

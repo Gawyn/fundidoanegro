@@ -1,21 +1,20 @@
 Fundidoanegro::Application.routes.draw do
-  devise_for :admins
-
-  devise_for :users
-
-  resources :festivals
+  resources :especials
 
   resources :articulos
 
-  resources :especials
-
   resources :criticas
+
+  devise_for :admins
+
+  devise_for :users
 
   devise_for :users, :as => "users", :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'register', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock' }
 	resources :users
 devise_for :admins, :as => "admins", :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up=> 'register' }
 	resources :admins
    root :to => 'articulos#index' 	
+	match 'portada', :to => 'portadas#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

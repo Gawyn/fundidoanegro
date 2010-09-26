@@ -1,7 +1,25 @@
-<%= render :partial => @articulo %>
+<p id="notice"><%= notice %></p>
 
-<% if admin_signed_in? %>
+<p>
+  <b>Title:</b>
+  <%= @articulo.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @articulo.body %>
+</p>
+
+<p>
+  <b>Especial:</b>
+  <%= @articulo.especial_id %>
+</p>
+
+<p>
+  <b>Portada:</b>
+  <%= @articulo.portada %>
+</p>
+
+
 <%= link_to 'Edit', edit_articulo_path(@articulo) %> |
-<%= link_to 'Destroy', @articulo, :method => :delete, :confirm => "Are you sure?" %> |
 <%= link_to 'Back', articulos_path %>
-<% end %>

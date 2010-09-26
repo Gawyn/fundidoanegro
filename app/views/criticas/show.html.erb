@@ -1,7 +1,45 @@
-<%= render :partial => @critica %>
+<p id="notice"><%= notice %></p>
 
-<% if admin_signed_in? %>
+<p>
+  <b>Title:</b>
+  <%= @critica.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @critica.body %>
+</p>
+
+<p>
+  <b>Title film:</b>
+  <%= @critica.title_film %>
+</p>
+
+<p>
+  <b>Director:</b>
+  <%= @critica.director %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%= @critica.year %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @critica.country %>
+</p>
+
+<p>
+  <b>Nota:</b>
+  <%= @critica.nota %>
+</p>
+
+<p>
+  <b>Especial:</b>
+  <%= @critica.especial_id %>
+</p>
+
+
 <%= link_to 'Edit', edit_critica_path(@critica) %> |
-<%= link_to 'Destroy', @critica, :method => :delete, :confirm => "Are you sure?" %> |
 <%= link_to 'Back', criticas_path %>
-<% end %>

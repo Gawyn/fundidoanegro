@@ -4,6 +4,8 @@
   <tr>
     <th>Title</th>
     <th>Body</th>
+    <th>Especial</th>
+    <th>Portada</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,6 +15,8 @@
   <tr>
     <td><%= articulo.title %></td>
     <td><%= articulo.body %></td>
+    <td><%= articulo.especial_id %></td>
+    <td><%= articulo.portada %></td>
     <td><%= link_to 'Show', articulo %></td>
     <td><%= link_to 'Edit', edit_articulo_path(articulo) %></td>
     <td><%= link_to 'Destroy', articulo, :confirm => 'Are you sure?', :method => :delete %></td>
