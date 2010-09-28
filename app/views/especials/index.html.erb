@@ -1,27 +1,21 @@
-<h1>Listing especials</h1>
+<div id = "contenedorcriticasindex">
+<div id="demo"> 
+		<% i=0 %>
+		<table align="center">
+		<tr>
+		<% @especials.each do |e| %>
+			<td><%= link_to image_tag(e.image.url, :title => e.title+' por '+e.autor, :size => "350x150"), e %></td>		
+  				<% if i==2 %>
+				</tr>
+				<tr>
+				<% end %>
+			<% i=i+1 %>
+		<% end %>
+		</tr>
+		</table>
+</div>
+</div>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th>Portada</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @especials.each do |especial| %>
-  <tr>
-    <td><%= especial.title %></td>
-    <td><%= especial.body %></td>
-    <td><%= especial.portada %></td>
-    <td><%= link_to 'Show', especial %></td>
-    <td><%= link_to 'Edit', edit_especial_path(especial) %></td>
-    <td><%= link_to 'Destroy', especial, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Especial', new_especial_path %>
+<script> 
+$("#demo img[title]").tooltip();
+</script> 

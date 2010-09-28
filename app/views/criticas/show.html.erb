@@ -1,45 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div id = "contenedortextgeneral">
+<div id = "contenedortextgeneral2"><br>
+	<div id ="contenedortext">
+		  <b><%= (@critica.title) %></b>
+		<br>
+		<%= @critica.title_film %> (<%= @critica.year %>, <%= @critica.director %>)
+		<br><br>
+		  <%= raw(@critica.body) %>
 
-<p>
-  <b>Title:</b>
-  <%= @critica.title %>
-</p>
-
-<p>
-  <b>Body:</b>
-  <%= @critica.body %>
-</p>
-
-<p>
-  <b>Title film:</b>
-  <%= @critica.title_film %>
-</p>
-
-<p>
-  <b>Director:</b>
-  <%= @critica.director %>
-</p>
-
-<p>
-  <b>Year:</b>
-  <%= @critica.year %>
-</p>
-
-<p>
-  <b>Country:</b>
-  <%= @critica.country %>
-</p>
-
-<p>
-  <b>Nota:</b>
-  <%= @critica.nota %>
-</p>
-
-<p>
-  <b>Especial:</b>
-  <%= @critica.especial_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_critica_path(@critica) %> |
-<%= link_to 'Back', criticas_path %>
+		<br><br>
+		  <b>Nota:</b>
+		  <%= @critica.nota %>
+		<br>
+		<%= link_to 'Edit', edit_critica_path(@critica) %> |
+		<%= link_to 'Back', criticas_path %>
+	</div>
+	<div id="contenedorlink">
+	AAAAAAAAAAA
+	</div>
+</div>
+</div>

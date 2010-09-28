@@ -1,0 +1,36 @@
+<a class="prev browse left scrollableTwoPrev"></a>
+
+<!-- root element for scrollable -->
+<div class="scrollablecriticas">   
+   
+   <!-- root element for the items -->
+   <div class="itemscrit">
+		<% i=0 %>
+		      <div>
+		<% @criticas.each do |c| %>
+			<%= link_to image_tag(c.image.url), c %>			
+  				<% if i==2 %>
+				</div>
+				<div>
+				<% end %>
+			<% i=i+1 %>
+		<% end %>
+		</div>
+   </div>
+   
+</div>
+
+<!-- "next page" action -->
+<a class="next browse right scrollableTwoNext" =></a>
+
+<script>
+
+
+$(function() {
+
+	// initialize scrollable
+$(".scrollablecriticas").scrollable({ next: '.scrollableTwoNext', prev: '.scrollableTwoPrev' });
+
+
+});
+</script>

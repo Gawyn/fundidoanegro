@@ -1,4 +1,4 @@
-<%= form_for(@critica) do |f| %>
+ <% form_for (@critica, :html => { :multipart => true }) do |f| %>
   <% if @critica.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@critica.errors.count, "error") %> prohibited this critica from being saved:</h2>
@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :body %><br />
-    <%= f.text_area :body %>
+    <center><%= f.text_area :body, :class => "mceEditor","cols" => 100, "rows" => 40 %></center>
   </div>
   <div class="field">
     <%= f.label :title_film %><br />
@@ -40,8 +40,16 @@
     <%= f.text_field :nota %>
   </div>
   <div class="field">
-    <%= f.label :especial_id %><br />
-    <%= f.text_field :especial_id %>
+    <%= f.label :image %><br />
+    <%= f.file_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :autor %><br />
+    <%= f.text_field :autor %>
+  </div>
+  <div class="field">
+    <%= f.label :portada %><br />
+    <%= f.check_box :portada %>
   </div>
   <div class="actions">
     <%= f.submit %>

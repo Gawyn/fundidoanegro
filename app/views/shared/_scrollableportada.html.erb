@@ -1,26 +1,21 @@
-<center>
-
 <!-- main navigator -->
 <ul id="mainscroll_navi">
 
-	<li class="active">
+<% @especials.each do |e| %>
+<li>
+<%= image_tag(e.image.url,  :size => "175x75") %>			
+</li>
+<% end %>
 
-		<img src="http://farm4.static.flickr.com/3278/2691545308_e7e817afb0_s.jpg"/>
-		<strong>Seagram Building</strong>
-		New York City, United States
-	</li>
-	<li>
-		<img src="http://farm1.static.flickr.com/3624/3323893148_8318838fbd_s.jpg"/>
-		<strong>Barcelona Pavilion</strong>
-		Barcelona, Spain
-	</li>
 
-	<li>
-		<img src="http://farm1.static.flickr.com/40/122343298_22333fb8e3_s.jpg" />
-		<strong>New National Gallery</strong>
-		Berlin, Germany
-	</li>
+<% @articulos.each do |a| %>
+<li>
+<%= image_tag(a.image.url,  :size => "175x75") %>			
+</li>
+<% end %>
 </ul>
+
+
 
 <!-- root element for the main scrollable -->
 <div id="mainscroll">
@@ -29,112 +24,66 @@
 
 	<div id="pages">
 
-		<!-- page #1 -->
-		<div class="page">
 
-			<!-- inner scrollable #1 -->
-			<div class="scrollable">
-
-				<!-- root element for scrollable items -->
-				<div class="items">
-
-					<!-- items  -->
-					<div class="item">
-						<img src="http://farm1.static.flickr.com/114/299183878_4feac12b04.jpg" />
-AAAA
+		<% @especials.each do |e| %>
+			<div class="page">
+				<div class="scrollable">
+					<div class="items">
+						<div class="item">
+							<%= link_to image_tag(e.image.url), e %>			
+							<br><strong>
+							<%= e.title %>
+							</strong><br>por
+							<%= e.autor %>
+						</div>
 					</div>
-
 				</div>
-
 			</div>
+		<% end %>
 
-		</div>
-
-		<!-- page #2 -->
-		<div class="page">
-
-
-			<!-- inner scrollable #2 -->
-			<div class="scrollable">
-
-				<!-- root element for scrollable items -->
-				<div class="items">
-
-					<!-- items on the second page -->
-					<div class="item">
-						<img src="http://farm1.static.flickr.com/143/321464099_a7cfcb95cf.jpg" />
+		<% @articulos.each do |a| %>
+			<div class="page">
+				<div class="scrollable">
+					<div class="items">
+						<div class="item">
+							<%= link_to image_tag(a.image.url), a %>			
+							<br><strong>
+							<%= a.title %>
+							</strong><br>por
+							<%= a.autor %>
+						</div>
 					</div>
-					<div class="item">
-						<img src="http://farm1.static.flickr.com/164/399223606_b875ddf797.jpg" />
-					</div>
-					<div class="item">
-
-						<img src="http://farm4.static.flickr.com/3651/3445879840_7ca4b491e9.jpg" />
-					</div>
-
 				</div>
-
 			</div>
-
-		</div>
-
-		<!-- page #3 -->
-		<div class="page">
-
-			<!-- inner scrollable #3 -->
-			<div class="scrollable">
-
-				<!-- root element for scrollable items -->
-				<div class="items">
-
-					<!-- items on the first page -->
-					<div class="item">
-
-						<img src="http://farm4.static.flickr.com/3155/2636513939_cd75b704ec.jpg" />
-					</div>
-					<div class="item">
-						<img src="http://farm1.static.flickr.com/40/122343298_22333fb8e3.jpg" />
-					</div>
-					<div class="item">
-						<img src="http://farm4.static.flickr.com/3105/2618870872_cf22d3cdb1.jpg" />
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
+		<% end %>
 
 	</div>
 
 </div>
 
-</center>
-
 <script>
 // What is $(document).ready ? See: http://flowplayer.org/tools/documentation/basics.html#document_ready
 $(document).ready(function() {
 
-
-
 // main vertical scroll
 $("#mainscroll").scrollable({
+
+
 
 	// basic settings
 	vertical: true,
 
 	// up/down keys will always control this scrollable
 	keyboard: 'static',
+	circular: true,
+next: '.scrollableOneNext', 
+prev: '.scrollableOnePrev'
 
 // main navigator (thumbnail images)
-}).navigator("#mainscroll_navi");
-
-// horizontal scrollables. each one is circular and has its own navigator instance
-var horizontal = $(".scrollable").scrollable({ circular: true }).navigator(".navi");
-
-
-// when page loads setup keyboard focus on the first horzontal scrollable
-horizontal.eq(0).data("scrollable").focus();
+}).navigator("#mainscroll_navi").autoscroll({
+	interval: 3000,
+	autoplay: true,	
+});
 
 });
 </script>

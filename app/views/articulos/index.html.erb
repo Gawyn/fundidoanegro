@@ -1,29 +1,21 @@
-<h1>Listing articulos</h1>
+<div id = "contenedorcriticasindex">
+<div id="demo"> 
+		<% i=0 %>
+		<table align="center">
+		<tr>
+		<% @articulos.each do |a| %>
+			<td><%= link_to image_tag(a.image.url, :title => a.title+' por '+a.autor, :size => "350x150"), a %></td>		
+  				<% if i==2 %>
+				</tr>
+				<tr>
+				<% end %>
+			<% i=i+1 %>
+		<% end %>
+		</tr>
+		</table>
+</div>
+</div>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th>Especial</th>
-    <th>Portada</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @articulos.each do |articulo| %>
-  <tr>
-    <td><%= articulo.title %></td>
-    <td><%= articulo.body %></td>
-    <td><%= articulo.especial_id %></td>
-    <td><%= articulo.portada %></td>
-    <td><%= link_to 'Show', articulo %></td>
-    <td><%= link_to 'Edit', edit_articulo_path(articulo) %></td>
-    <td><%= link_to 'Destroy', articulo, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Articulo', new_articulo_path %>
+<script> 
+$("#demo img[title]").tooltip();
+</script> 

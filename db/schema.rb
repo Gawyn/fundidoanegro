@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100926214625) do
+ActiveRecord::Schema.define(:version => 20100927225653) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
@@ -40,6 +40,11 @@ ActiveRecord::Schema.define(:version => 20100926214625) do
     t.boolean  "portada"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "autor"
   end
 
   create_table "criticas", :force => true do |t|
@@ -50,9 +55,14 @@ ActiveRecord::Schema.define(:version => 20100926214625) do
     t.integer  "year"
     t.string   "country"
     t.integer  "nota"
-    t.integer  "especial_id"
+    t.boolean  "portada"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "autor"
   end
 
   create_table "especials", :force => true do |t|
@@ -61,6 +71,19 @@ ActiveRecord::Schema.define(:version => 20100926214625) do
     t.boolean  "portada"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "autor"
+  end
+
+  create_table "noticias", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "avance"
   end
 
   create_table "portadas", :force => true do |t|

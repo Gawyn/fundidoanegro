@@ -1,25 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div id = "contenedortextgeneral">
+<div id = "contenedortextgeneral2"><br>
+	<div id ="contenedortext">
+	  <b><%= h(@articulo.title) %></b>
+	<br><br>
+	  <%= raw(@articulo.body) %>
+	<br>
+	<%= link_to 'Edit', edit_articulo_path(@articulo) %> |
+	<%= link_to 'Back', articulos_path %>
+	</div>
+	<div id="contenedorlink">
+	AAAA
+	</div>
+</div>
+</div>
 
-<p>
-  <b>Title:</b>
-  <%= @articulo.title %>
-</p>
-
-<p>
-  <b>Body:</b>
-  <%= @articulo.body %>
-</p>
-
-<p>
-  <b>Especial:</b>
-  <%= @articulo.especial_id %>
-</p>
-
-<p>
-  <b>Portada:</b>
-  <%= @articulo.portada %>
-</p>
-
-
-<%= link_to 'Edit', edit_articulo_path(@articulo) %> |
-<%= link_to 'Back', articulos_path %>

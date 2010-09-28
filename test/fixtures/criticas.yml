@@ -8,7 +8,7 @@ one:
   year: 1
   country: MyString
   nota: 1
-  especial_id: 1
+  portada: false
 
 two:
   title: MyString
@@ -18,4 +18,4 @@ two:
   year: 1
   country: MyString
   nota: 1
-  especial_id: 1
+  portada: false

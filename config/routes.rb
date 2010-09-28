@@ -1,9 +1,11 @@
 Fundidoanegro::Application.routes.draw do
+  resources :noticias
+
+  resources :criticas
+
   resources :especials
 
   resources :articulos
-
-  resources :criticas
 
   devise_for :admins
 
@@ -13,7 +15,7 @@ Fundidoanegro::Application.routes.draw do
 	resources :users
 devise_for :admins, :as => "admins", :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up=> 'register' }
 	resources :admins
-   root :to => 'articulos#index' 	
+      root :to => 'portadas#show' 	
 	match 'portada', :to => 'portadas#show'
 
   # The priority is based upon order of creation:
