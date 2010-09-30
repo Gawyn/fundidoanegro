@@ -7,7 +7,7 @@ class EspecialsController < ApplicationController
                               :plugins => %w{ table fullscreen }
                             }
   def index
-    @especials = Especial.all
+	@especials = Especial.find(:all, :order => "created_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb

@@ -7,7 +7,7 @@ class CriticasController < ApplicationController
                               :plugins => %w{ table fullscreen }
                             }
   def index
-    @criticas = Critica.all
+	@criticas = Critica.find(:all, :order => "created_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -19,7 +19,13 @@ class CriticasController < ApplicationController
   # GET /criticas/1.xml
   def show
     @critica = Critica.find(params[:id])
-
+@criticasrelacionadas1 = Array.new()
+if @critica.especial!=nil
+@criticasrelacionadas1 = Critica.find(:all, :conditions => {:especial_id => @critica.especial.id})
+@criticasrelacionadas1.delete(@critica)
+end
+@criticasrelacionadas2 = Critica.find(:all, :conditions => {:user_id => @critica.user.id})
+@criticasrelacionadas2.delete(@critica)
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @critica }
@@ -45,8 +51,8 @@ class CriticasController < ApplicationController
   # POST /criticas
   # POST /criticas.xml
   def create
+	params[:critica][:user_id] = current_user.id
     @critica = Critica.new(params[:critica])
-
     respond_to do |format|
       if @critica.save
         format.html { redirect_to(@critica, :notice => 'Critica was successfully created.') }

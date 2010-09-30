@@ -8,7 +8,7 @@
 		<% i=0 %>
 		      <div>
 		<% @criticas.each do |c| %>
-			<%= link_to image_tag(c.image.url), c %>			
+			<%= link_to image_tag(c.image.url, :title => c.title+' por '+c.autor), c %>			
   				<% if i==2 %>
 				</div>
 				<div>
@@ -17,15 +17,11 @@
 		<% end %>
 		</div>
    </div>
-   
 </div>
 
 <!-- "next page" action -->
 <a class="next browse right scrollableTwoNext" =></a>
-
 <script>
-
-
 $(function() {
 
 	// initialize scrollable

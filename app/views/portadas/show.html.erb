@@ -7,7 +7,7 @@
 <%= render "shared/scrollablecriticas" %>
 	</div>
 	<div class="columnadreta">
-	<center><%= image_tag("subtinoti.png") %></center>
+<center><%= image_tag("subtinoti.png") %></center>
 	<br>
 	<% @noticias.each do |n| %>
 	<strong>·<%= link_to n.title, n %></strong><br>	
@@ -17,20 +17,25 @@
 </div>
 	<div id="contenedorarticulos">
 	<center><%= image_tag("otrosarticulos.png") %></center>
-	<div class="columnaesquerra"><br>
-<div id="demo"> 
-	<img src="http://static.flowplayer.org/tools/img/photos/1.jpg"
-		title="A must have tool for designing better layouts and more intuitive user-interfaces."/> 
- 
-	<img src="http://static.flowplayer.org/tools/img/photos/2.jpg"
-		title="Tooltips can be positioned anywhere relative to the trigger element."/> 
-</div> 
+
+<div id="demo">
+		<% i=0 %>
+		<table align="center">
+		<tr>
+		<% @tots.each do |a| %>
+			<td><%= link_to image_tag(a.image.url, :title => '<i>'+a.title+'</i><br> por '+a.autor, :size => "400x175"), a %></td>		
+  				<% if i==1 %>
+				</tr>
+				<tr>
+				<% end %>
+			<% i=i+1 %>
+		<% end %>
+		</tr>
+		</table>
+</div>
 	</div>
 <script> 
 $("#demo img[title]").tooltip();
 </script> 
-	<div class="columnadreta"><br>
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque posuere pretium neque, sit amet dictum eros malesuada ac. Aliquam ac mi ut nisi iaculis hendrerit. Suspendisse potenti. Nulla congue mi vel mauris viverra ut euismod quam porta. Ut eu elit neque. Vestibulum euismod massa ut arcu tempus consectetur. Morbi sodales tortor eget eros euismod hendrerit dapibus
-	</div>
 	</div>
 

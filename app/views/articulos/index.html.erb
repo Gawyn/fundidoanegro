@@ -1,13 +1,19 @@
 <div id = "contenedorcriticasindex">
 <div id="demo"> 
-		<% i=0 %>
-		<table align="center">
+		<% i=1 %>
+		<table align="center" cellspacing="20">
 		<tr>
 		<% @articulos.each do |a| %>
-			<td><%= link_to image_tag(a.image.url, :title => a.title+' por '+a.autor, :size => "350x150"), a %></td>		
+			<td><%= link_to image_tag(a.image.url, :title => '<i>'+a.title+'</i><br> por '+a.autor, :size => "350x150"), a %><br>
+<% if admin_signed_in? | (user_signed_in? && current_user.id==a.user.id) %><%= link_to 'Destroy', a, :method => :delete, :confirm => "Are you sure?" %>
+<% else %>
+<br>
+<% end %>
+</td>	
   				<% if i==2 %>
 				</tr>
 				<tr>
+  				<% i=0 %>
 				<% end %>
 			<% i=i+1 %>
 		<% end %>

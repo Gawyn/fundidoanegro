@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :especial_id %><br />
-    <%= f.text_field :especial_id %>
+    <%= select("articulo", "especial_id", Especial.all.collect {|p| [ p.title, p.id ] }, {:include_blank => 'Ninguno'}) %>
   </div>
   <div class="field">
     <%= f.label :image %><br />

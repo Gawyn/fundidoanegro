@@ -1,7 +1,7 @@
 class NoticiasController < ApplicationController
   # GET /noticias
   # GET /noticias.xml
-	before_filter :authenticate_user!, :except => [:index, :show]
+	before_filter :authenticate_user!, :except => [:show]
   uses_tiny_mce :options => {
                               :theme => 'advanced',
                               :plugins => %w{ table fullscreen }

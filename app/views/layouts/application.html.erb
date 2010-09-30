@@ -8,7 +8,8 @@
   <script type="text/javascript">
     google.load("jquery", "1.4.2");
   </script>
-
+<%= javascript_include_tag "jquery.bgpos" %>
+<%= javascript_include_tag "chrome" %>
 
 <%= javascript_include_tag "http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js" %>
   <%= javascript_include_tag "jquery-rails" %>
@@ -27,6 +28,19 @@
 <div id=header>
 <center><%= image_tag("fundidoanegrologo.jpg", :style => "align:middle;") %></center>
 </div>
+<div id="MainMenu">
+	<div id="tab">
+		<ul>
+
+			<li class="portada"><a href="<%= portada_url %>"><span> Portada</span></a></li>
+			<li class="articulos"><a href="<%= articulos_url %>"><span>Artículos</span></a></li>
+			<li class="especiales"><a href="<%= especials_url %>"><span>Especiales</span></a></li>
+			<li class="criticas"><a href="<%= criticas_url %>"><span>Críticas</span></a></li>
+			<li class="puntuaciones"><a href="#"><span>Contact</span></a></li>
+		</ul>
+	</div>
+</div>
+
 
 <%= yield %>
 

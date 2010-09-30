@@ -1,6 +1,6 @@
 <div id = "contenedorcriticasindex">
 <div id="demo"> 
-		<% i=0 %>
+		<% i=1 %>
 		<table align="center">
 		<tr>
 		<% @especials.each do |e| %>
@@ -8,6 +8,7 @@
   				<% if i==2 %>
 				</tr>
 				<tr>
+  				<% i=0 %>
 				<% end %>
 			<% i=i+1 %>
 		<% end %>

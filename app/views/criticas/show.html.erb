@@ -1,9 +1,11 @@
 <div id = "contenedortextgeneral">
 <div id = "contenedortextgeneral2"><br>
 	<div id ="contenedortext">
-		  <b><%= (@critica.title) %></b>
+		  <span style="font-size:20pt"><b><%= (@critica.title) %></b></span>
 		<br>
 		<%= @critica.title_film %> (<%= @critica.year %>, <%= @critica.director %>)
+		<br><br>
+			<%=image_tag(@critica.image.url) %>			
 		<br><br>
 		  <%= raw(@critica.body) %>
 
@@ -11,11 +13,26 @@
 		  <b>Nota:</b>
 		  <%= @critica.nota %>
 		<br>
-		<%= link_to 'Edit', edit_critica_path(@critica) %> |
-		<%= link_to 'Back', criticas_path %>
+<% if admin_signed_in? | (user_signed_in? && current_user.id==@critica.user.id) %><%= link_to 'Edit', edit_critica_path(@critica) %>
+<% end %>
 	</div>
 	<div id="contenedorlink">
-	AAAAAAAAAAA
+  		<% if !@criticasrelacionadas1.empty? %>
+		En este mismo especial:<br>
+			<% @criticasrelacionadas1.each do |a| %>
+				<div id="demo"><%= link_to image_tag(a.image.url, :title => '<i>'+a.title+'</i><br> por '+a.autor, :size => "50x72"), a %></div>
+			<% end %>
+		<% end %>
+  		<% if !@criticasrelacionadas2.empty? %>
+			Del mismo autor:<br>
+			<% @criticasrelacionadas2.each do |a| %>
+				<div id="demo"><%= link_to image_tag(a.image.url, :title => '<i>'+a.title+'</i><br> por '+a.autor, :size => "50x72"), a %></div>
+			<% end %>
+		<% end %>
 	</div>
 </div>
 </div>
+<script> 
+$("#demo img[title]").tooltip();
+</script> 
+

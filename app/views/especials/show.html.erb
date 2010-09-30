@@ -1,20 +1,28 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
-  <%= @especial.title %>
-</p>
-
-<p>
-  <b>Body:</b>
-  <%= @especial.body %>
-</p>
-
-<p>
-  <b>Portada:</b>
-  <%= @especial.portada %>
-</p>
+<br><span style="font-size:20pt"><strong><%= @especial.title %></strong></span>
+<br><br><br>
 
 
-<%= link_to 'Edit', edit_especial_path(@especial) %> |
-<%= link_to 'Back', especials_path %>
+
+		<% @especial.articulos.each do |a| %>
+		<div id="demo"><%= link_to image_tag(a.image.url, :title => '<i>'+a.title+'</i><br> por '+a.autor, :size => "400x175"), a %></div>
+				<br>	
+		<% end %>
+		<% i=0 %>
+		<table align="center">
+		<tr>
+		<% @especial.criticas.each do |c| %>
+			<td><div id="demo"><%= link_to image_tag(c.image.url, :title => '<i>'+c.title+'</i><br> por '+c.autor), c %></div></td>	
+  				<% if i==3 %>
+				</tr>
+				<tr>
+				<% end %>
+			<% i=i+1 %>
+		<% end %>
+		</tr>
+		</table>
+
+<%= link_to 'Edit', edit_especial_path(@especial) %>
+
+<script> 
+$("#demo img[title]").tooltip();
+</script> 

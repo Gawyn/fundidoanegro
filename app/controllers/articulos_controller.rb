@@ -7,7 +7,7 @@ class ArticulosController < ApplicationController
                               :plugins => %w{ table fullscreen }
                             }
   def index
-    @articulos = Articulo.all
+	@articulos = Articulo.find(:all, :order => "created_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -19,7 +19,13 @@ class ArticulosController < ApplicationController
   # GET /articulos/1.xml
   def show
     @articulo = Articulo.find(params[:id])
-
+@articulosrelacionados1 = Array.new()
+	if @articulo.especial!=nil
+	@articulosrelacionados1 = Articulo.find(:all, :conditions => {:especial_id => @articulo.especial.id})
+	@articulosrelacionados1.delete(@articulo)
+	end
+	@articulosrelacionados2 = Articulo.find(:all, :conditions => {:user_id => @articulo.user.id})
+	@articulosrelacionados2.delete(@articulo)
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @articulo }
@@ -45,6 +51,7 @@ class ArticulosController < ApplicationController
   # POST /articulos
   # POST /articulos.xml
   def create
+	params[:articulo][:user_id] = current_user.id
     @articulo = Articulo.new(params[:articulo])
 
     respond_to do |format|

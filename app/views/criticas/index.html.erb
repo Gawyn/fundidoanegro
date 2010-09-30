@@ -4,8 +4,13 @@
 		<table align="center">
 		<tr>
 		<% @criticas.each do |c| %>
-			<td><%= link_to image_tag(c.image.url, :title => c.title+' por '+c.autor), c %></td>		
-  				<% if i==2 %>
+			<td><%= link_to image_tag(c.image.url, :title => '<i>'+c.title+'</i><br> por '+c.autor), c %><br>
+<% if admin_signed_in? | (user_signed_in? && current_user.id==c.user.id) %><%= link_to 'Destroy', c, :method => :delete, :confirm => "Are you sure?" %>
+<% else %>
+<br>
+<% end %>
+</td>
+  				<% if i==3 %>
 				</tr>
 				<tr>
 				<% end %>

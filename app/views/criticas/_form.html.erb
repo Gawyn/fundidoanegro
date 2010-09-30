@@ -44,6 +44,10 @@
     <%= f.file_field :image %>
   </div>
   <div class="field">
+    <%= f.label :especial_id %><br />
+    <%= select("critica", "especial_id", Especial.all.collect {|p| [ p.title, p.id ] }, {:include_blank => 'Ninguno'}) %>
+  </div>
+  <div class="field">
     <%= f.label :autor %><br />
     <%= f.text_field :autor %>
   </div>

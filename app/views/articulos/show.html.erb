@@ -1,16 +1,35 @@
 <div id = "contenedortextgeneral">
 <div id = "contenedortextgeneral2"><br>
-	<div id ="contenedortext">
-	  <b><%= h(@articulo.title) %></b>
+	<div id ="contenedortext"><br>
+	  <span style="font-size:20pt"><b><center><%= h(@articulo.title) %></center></b></span>
 	<br><br>
 	  <%= raw(@articulo.body) %>
 	<br>
-	<%= link_to 'Edit', edit_articulo_path(@articulo) %> |
-	<%= link_to 'Back', articulos_path %>
+<% if admin_signed_in? | (user_signed_in? && current_user.id==@articulo.user.id) %>	<%= link_to 'Edit', edit_articulo_path(@articulo) %><% end %>
 	</div>
 	<div id="contenedorlink">
-	AAAA
+  		<% if !@articulosrelacionados1.empty? %>
+			En este mismo especial:
+			<% @articulosrelacionados1.each do |a| %>
+<div id="demo"><%= link_to image_tag(a.image.url, :title => '<i>'+a.title+'</i><br> por '+a.autor, :size => "100x45"), a %></div>	
+				<br>
+			<% end %>
+<br>
+		<% end %>
+
+  		<% if !@articulosrelacionados2.empty? %>
+			Del mismo autor:<br><br>
+			<% @articulosrelacionados2.each do |a| %>
+<div id="demo"><%= link_to image_tag(a.image.url, :title => '<i>'+a.title+'</i><br> por '+a.autor, :size => "100x45"), a %></div>
+				<br>
+			<% end %>
+		<% end %>
+
 	</div>
 </div>
 </div>
+
+<script> 
+$("#demo img[title]").tooltip();
+</script> 
 
