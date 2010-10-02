@@ -8,14 +8,29 @@
   <script type="text/javascript">
     google.load("jquery", "1.4.2");
   </script>
-<%= javascript_include_tag "jquery.bgpos" %>
+
+
 <%= javascript_include_tag "chrome" %>
 
+
+
+<%= javascript_include_tag "jquery.rest_in_place" %>
+  <script type="text/javascript">
+var J = jQuery.noConflict();
+    rails_authenticity_token = '<%= form_authenticity_token %>'
+    J(document).ready(function() {
+      J(".rest_in_place").rest_in_place();
+    });
+  </script>
+
 <%= javascript_include_tag "http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js" %>
+
   <%= javascript_include_tag "jquery-rails" %>
+
 
   <%= csrf_meta_tag %>
   <%= include_tiny_mce_if_needed %>
+
 
 
 
@@ -36,7 +51,7 @@
 			<li class="articulos"><a href="<%= articulos_url %>"><span>Artículos</span></a></li>
 			<li class="especiales"><a href="<%= especials_url %>"><span>Especiales</span></a></li>
 			<li class="criticas"><a href="<%= criticas_url %>"><span>Críticas</span></a></li>
-			<li class="puntuaciones"><a href="#"><span>Contact</span></a></li>
+			<li class="puntuaciones"><a href="<%= puntuacions_url %>"<span>Contact</span></a></li>
 		</ul>
 	</div>
 </div>
@@ -47,5 +62,6 @@
 
 
 </div>
+<%= render :partial => 'shared/analytics' %>
 </body>
 </html>

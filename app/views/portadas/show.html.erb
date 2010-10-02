@@ -19,13 +19,14 @@
 	<center><%= image_tag("otrosarticulos.png") %></center>
 
 <div id="demo">
-		<% i=0 %>
+		<% i=1 %>
 		<table align="center">
 		<tr>
 		<% @tots.each do |a| %>
 			<td><%= link_to image_tag(a.image.url, :title => '<i>'+a.title+'</i><br> por '+a.autor, :size => "400x175"), a %></td>		
-  				<% if i==1 %>
+  				<% if i==2 %>
 				</tr>
+				<% i=0 %>
 				<tr>
 				<% end %>
 			<% i=i+1 %>
@@ -37,5 +38,5 @@
 <script> 
 $("#demo img[title]").tooltip();
 </script> 
-	</div>
+
 

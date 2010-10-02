@@ -1,0 +1,29 @@
+<%= form_for(@puntuacion) do |f| %>
+  <% if @puntuacion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@puntuacion.errors.count, "error") %> prohibited this puntuacion from being saved:</h2>
+
+      <ul>
+      <% @puntuacion.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :film_id %><br />
+    <%= f.text_field :film_id %>
+  </div>
+  <div class="field">
+    <%= f.label :critico_id %><br />
+    <%= f.text_field :critico_id %>
+  </div>
+  <div class="field">
+    <%= f.label :nota %><br />
+    <%= f.text_field :nota %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -19,6 +19,9 @@
 		</tr>
 		</table>
 </div>
+<% if user_signed_in? %>
+<%= link_to 'New Critica', new_critica_path %>
+<% end %>
 </div>
 
 <script> 

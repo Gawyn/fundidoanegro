@@ -20,6 +20,9 @@
 		</tr>
 		</table>
 </div>
+<% if user_signed_in? %>
+<%= link_to 'New Artículo', new_articulo_path %>
+<% end %>
 </div>
 
 <script> 

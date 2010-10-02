@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Film:</b>
+  <%= @puntuacion.film_title %>
+</p>
+
+<p>
+  <b>Critico:</b>
+  <%= @puntuacion.critico_firma %>
+</p>
+
+<p>
+  <b>Nota:</b>
+  <%= @puntuacion.nota %>
+</p>
+
+
+<%= link_to 'Edit', edit_puntuacion_path(@puntuacion) %> |
+<%= link_to 'Back', puntuacions_path %>

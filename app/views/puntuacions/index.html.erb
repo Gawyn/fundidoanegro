@@ -1,0 +1,44 @@
+
+
+<center><table cellspacing=0><tr><td></td>
+<% i=0 %>
+<% @criticos.each do |c| %>
+	<td style="border-width:1px;  border-color: #999; border-style: solid"><%= @puntuaciones[i].critico.firma %></td>
+	<% i=i+1 %>
+<% end %>
+</tr>
+<% j=0 %>
+<tr>
+<td style="border-width:1px;  border-color: #999; border-style: solid"><%= @puntuaciones[0].film.title %></td>
+<% @puntuaciones.each do |p| %>
+	<% if j==i %>
+		<tr>
+		<% j=0 %>
+		<td style="border-width:1px;  border-color: #999; border-style: solid"><%= p.film.title %></td>
+	<% end %>
+	<% if current_critico.id==p.critico.id %>
+		<td style="border-width:1px; border-color: #999; border-style: solid;border-left:0; border-top:0"><span id="<%= p.id %>" data-formtype="input" class="rest_in_place" data-url=<%="/puntuacions/" + p.id.to_s %> data-object="puntuacion" data-attribute="nota">
+	<% else %>
+	<td style="border-width:1px; border-color: #999; border-style: solid;border-left:0; border-top:0"><span>
+	<% end %>
+		<% k=0 %>
+		<center>
+		<% while k<p.nota %>
+			<%= image_tag "star.png" %>
+			<% k=k+1 %>
+		<% end %>
+		<% if p.nota==0 %>
+			<span style="font-size:0">0</span>
+		<% end %>
+		</center>
+		    </span></td>
+
+	<% j=j+1 %>
+	<% if j==i %>
+		</tr>
+	<% end %>
+<% end %>
+</table><br>
+</center>
+
+

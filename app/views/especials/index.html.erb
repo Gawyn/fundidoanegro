@@ -15,6 +15,9 @@
 		</tr>
 		</table>
 </div>
+<% if admin_signed_in? %>
+<%= link_to 'New Especial', new_especial_path %>
+<% end %>
 </div>
 
 <script> 

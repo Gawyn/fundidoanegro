@@ -1,0 +1,25 @@
+<h2>Sign up</h2>
+
+ <% form_for (@critico) do |f| %>
+  <%= devise_error_messages! %>
+
+Pepe
+  <p><%= f.label :name %><br />
+  <%= f.text_field :name %></p>
+
+  <p><%= f.label :firma %><br />
+  <%= f.text_field :firma %></p>
+
+  <p><%= f.label :email %><br />
+  <%= f.text_field :email %></p>
+
+  <p><%= f.label :password %><br />
+  <%= f.password_field :password %></p>
+
+  <p><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></p>
+
+  <div class="actions">
+  <p><%= f.submit "Sign up" %></p>
+	</div>
+<% end %>

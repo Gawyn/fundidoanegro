@@ -1,4 +1,12 @@
 Fundidoanegro::Application.routes.draw do
+
+  resources :puntuacions
+
+  resources :films
+
+  devise_for :criticos, :path => "criticos", :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'register', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock' }, :controllers => { :registrations => "criticos/registrations" }
+	resources :criticos
+
   resources :noticias
 
   resources :criticas
@@ -11,9 +19,9 @@ Fundidoanegro::Application.routes.draw do
 
   devise_for :users
 
-  devise_for :users, :as => "users", :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'register', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock' }
+  devise_for :users, :path => "users", :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'register', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock' }
 	resources :users
-devise_for :admins, :as => "admins", :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up=> 'register' }
+devise_for :admins, :path => "admins", :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up=> 'register' }
 	resources :admins
       root :to => 'portadas#show' 	
 	match 'portada', :to => 'portadas#show'

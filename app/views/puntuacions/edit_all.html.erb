@@ -1,0 +1,11 @@
+<table>
+<% @puntuaciones.each do |p| %>
+  <tr>
+<td><%= p.film.title %></td>
+    <td><span id="<%= p.id %>" data-formtype="input" class="rest_in_place" data-url=<%="/puntuacions/" + p.id.to_s %> data-object="puntuacion" data-attribute="nota">
+      <%= p.nota %>
+    </span></td>
+  </tr>
+<% end %>
+</table>
+
