@@ -5,6 +5,7 @@ gem 'rails', '3.0.0'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'sqlite3-ruby', :require => 'sqlite3'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -14,6 +15,7 @@ gem 'capistrano'
 
 # To use debugger
 gem 'ruby-debug'
+gem 'mysql', '2.8.1'
 
 # Bundle the extra gems:
 # gem 'bj'
