@@ -7,7 +7,7 @@ development:
   port: 3306
   database: fundidoanegro
   username: gawyn
-  password: rvdfhspi
+  password: gawynrocks
 
 
 # Warning: The database defined as "test" will be erased and
@@ -26,4 +26,4 @@ production:
   port: 3306
   database: fundidoanegro
   username: gawyn
-  password: rvdfhspi
+  password: gawynrocks
