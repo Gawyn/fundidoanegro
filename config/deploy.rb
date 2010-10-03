@@ -6,7 +6,7 @@ set :domain, 'fundidoanegro.net'
 set :application, 'fundidoanegro'
 
 # the rest should be good
-set :repository,  "gawyn@fundidoanegro.net:git/fundidoanegro.git"
+set :repository,  "git://github.com/Gawyn/fundidoanegro"
 set :deploy_to, "/home/gawyn/fundidoanegro.net"
 set :deploy_via, :remote_cache
 set :scm, 'git'
