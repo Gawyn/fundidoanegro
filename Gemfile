@@ -23,6 +23,7 @@ gem 'mysql', '2.8.1'
 gem 'devise'
 gem 'tiny_mce'
 gem 'paperclip'
+gem 'passenger'
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
