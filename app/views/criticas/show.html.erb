@@ -5,6 +5,7 @@
 		<br>
 		<%= @critica.title_film %> (<%= @critica.year %>, <%= @critica.director %>)
 		<br><br>
+			<% k=0 %>
 		<% while (k+1)<@critica.nota %>
 			<%= image_tag "starsmall.png" %>
 			<% k=k+2 %>
