@@ -14,16 +14,19 @@
 		<% j=0 %>
 		<td style="border-width:1px;  border-color: #999; border-style: solid"><%= p.film.title %></td>
 	<% end %>
-	<% if current_critico.id==p.critico.id %>
+	<% if current_critico.id==p.critico_id %>
 		<td style="border-width:1px; border-color: #999; border-style: solid;border-left:0; border-top:0"><span id="<%= p.id %>" data-formtype="input" class="rest_in_place" data-url=<%="/puntuacions/" + p.id.to_s %> data-object="puntuacion" data-attribute="nota">
 	<% else %>
 	<td style="border-width:1px; border-color: #999; border-style: solid;border-left:0; border-top:0"><span>
 	<% end %>
 		<% k=0 %>
 		<center>
-		<% while k<p.nota %>
-			<%= image_tag "star.png" %>
-			<% k=k+1 %>
+		<% while (k+1)<p.nota %>
+			<%= image_tag "starsmall.png" %>
+			<% k=k+2 %>
+		<% end %>
+		<% if k<p.nota %>
+			<%= image_tag "halfstarsmall.png" %>
 		<% end %>
 		<% if p.nota==0 %>
 			<span style="font-size:0">0</span>

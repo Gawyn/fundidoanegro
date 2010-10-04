@@ -1,7 +1,7 @@
 class FilmsController < ApplicationController
   # GET /films
   # GET /films.xml
-	before_filter :authenticate_admin!
+	before_filter :authenticate_critico!
   def index
     @films = Film.all
 
