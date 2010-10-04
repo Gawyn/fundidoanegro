@@ -4,7 +4,9 @@
 	  <span style="font-size:20pt"><b><center><%= h(@articulo.title) %></center></b></span>
 	<br><br>
 	  <%= raw(@articulo.body) %>
-	<br>
+	<br><br>
+Por <%= raw(@articulo.autor) %>
+<br>
 <% if admin_signed_in? | (user_signed_in? && current_user.id==@articulo.user.id) %>	<%= link_to 'Edit', edit_articulo_path(@articulo) %><% end %>
 	</div>
 	<div id="contenedorlink">
