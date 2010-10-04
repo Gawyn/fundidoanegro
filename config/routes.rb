@@ -19,6 +19,7 @@ Fundidoanegro::Application.routes.draw do
 	resources :users
 devise_for :admins, :path => "admins", :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up=> 'register' }
 	resources :admins
+	resources :portadas
       root :to => 'portadas#show' 	
 	match 'portada', :to => 'portadas#show'
 
