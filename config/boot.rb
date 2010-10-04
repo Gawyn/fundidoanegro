@@ -2,6 +2,7 @@ require 'rubygems'
 
 # Set up gems listed in the Gemfile.
 gemfile = File.expand_path('../../Gemfile', __FILE__)
+  ENV['GEM_PATH'] = '/home/gawyn/.gems' + '/usr/lib/ruby/gems/1.8'
 begin
   ENV['BUNDLE_GEMFILE'] = gemfile
   require 'bundler'
