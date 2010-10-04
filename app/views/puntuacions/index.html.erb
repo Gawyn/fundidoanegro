@@ -41,5 +41,9 @@
 <% end %>
 </table><br>
 </center>
+<br>
+<% if critico_signed_in? %>
+<%= link_to 'New Film', new_film_path %>
+<% end %>
 
 
