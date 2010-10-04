@@ -1,4 +1,4 @@
 class Film < ActiveRecord::Base
 	has_many :criticas
-	has_may :puntuacions
+	has_many :puntuacions
 end
