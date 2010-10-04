@@ -1,4 +1,4 @@
-ENV['GEM_PATH'] = '/home/gawyn/.gems' + '/usr/lib/ruby/gems/1.8'
+ENV['GEM_PATH'] = '/usr/lib/ruby/gems/1.8'
 require 'rubygems'
 Gem.clear_paths 
 
