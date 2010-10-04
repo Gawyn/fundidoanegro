@@ -21,7 +21,21 @@
 <div id="mainscroll">
 	<!-- root element for pages -->
 	<div id="pages">
-
+		<% @especials.each do |e| %>
+			<div class="page">
+				<div class="scrollable">
+					<div class="items">
+						<div class="item">
+							<%= link_to image_tag(e.image.url), e %>			
+							<br><strong>
+							<%= e.title %>
+							</strong><br>por
+							<%= e.autor %>
+						</div>
+					</div>
+				</div>
+			</div>
+		<% end %>
 
 		<% @articulos.each do |a| %>
 			<div class="page">
