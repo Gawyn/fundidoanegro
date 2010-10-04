@@ -1,5 +1,6 @@
 class Criticos::RegistrationsController < ApplicationController
   include Devise::Controllers::InternalHelpers
+	before_filter :authenticate_admin!, :except => [:edit,:sign_in]
 
   # POST /resource/sign_up
   def create

@@ -15,6 +15,8 @@ Fundidoanegro::Application.routes.draw do
 
   resources :articulos
 
+devise_for :users
+devise_for :admins
   devise_for :users, :path => "users", :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'register', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock' }
 	resources :users
 devise_for :admins, :path => "admins", :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up=> 'register' }
