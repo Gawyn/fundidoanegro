@@ -19,7 +19,7 @@
 		  <%= raw(@critica.body) %>
 
 		<br><br>
-		Por <%= raw(@articulo.autor) %>
+		Por <%= raw(@critica.autor) %>
 
 		<br>
 <% if admin_signed_in? | (user_signed_in? && current_user.id==@critica.user.id) %><%= link_to 'Edit', edit_critica_path(@critica) %>
