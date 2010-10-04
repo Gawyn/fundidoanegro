@@ -21,7 +21,7 @@ devise_for :admins, :path => "admins", :path_names => { :sign_in => 'login', :si
 	resources :admins
 	resources :portadas
 	match 'portada', :to => 'portadas#show'
-      root :to => 'portada' 	
+      root :to => 'portadas#show' 	
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
