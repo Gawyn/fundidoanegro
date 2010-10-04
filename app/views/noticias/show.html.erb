@@ -1,15 +1,14 @@
 <div id = "contenedortextgeneral">
 <div id = "contenedortextgeneral2"><br>
-	<div id ="contenedortext">
-	  <b><%= h(@noticia.title) %></b>
+	<div id ="contenedortext"><br>
+	  <span style="font-size:20pt"><b><center><%= h(@articulo.title) %></center></b></span>
 	<br><br>
 	  <%= raw(@noticia.body) %>
 	<br>
-	<%= link_to 'Edit', edit_noticia_path(@noticia) %> |
-	<%= link_to 'Back', noticias_path %>
+<% if admin_signed_in? | (user_signed_in? && current_user.id==@articulo.user.id) %>	<%= link_to 'Edit', edit_articulo_path(@articulo) %><% end %>
+	</div>
 	</div>
 	<div id="contenedorlink">
-
 	</div>
 </div>
 </div>

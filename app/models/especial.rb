@@ -6,3 +6,6 @@ class Especial < ActiveRecord::Base
 	has_many :articulos
 	has_many :criticas
 end
+
+
+
