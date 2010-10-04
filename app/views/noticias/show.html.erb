@@ -5,7 +5,6 @@
 	<br><br>
 	  <%= raw(@noticia.body) %>
 	<br>
-<% if admin_signed_in? | (user_signed_in? && current_user.id==@articulo.user.id) %>	<%= link_to 'Edit', edit_articulo_path(@articulo) %><% end %>
 	</div>
 	</div>
 	<div id="contenedorlink">
