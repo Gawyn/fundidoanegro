@@ -19,27 +19,9 @@
 
 <!-- root element for the main scrollable -->
 <div id="mainscroll">
-
 	<!-- root element for pages -->
-
 	<div id="pages">
 
-
-		<% @especials.each do |e| %>
-			<div class="page">
-				<div class="scrollable">
-					<div class="items">
-						<div class="item">
-							<%= link_to image_tag(e.image.url), e %>			
-							<br><strong>
-							<%= e.title %>
-							</strong><br>por
-							<%= e.autor %>
-						</div>
-					</div>
-				</div>
-			</div>
-		<% end %>
 
 		<% @articulos.each do |a| %>
 			<div class="page">
@@ -61,5 +43,30 @@
 
 </div>
 
+<script>
+// What is $(document).ready ? See: http://flowplayer.org/tools/documentation/basics.html#document_ready
+$(document).ready(function() {
 
+// main vertical scroll
+$("#mainscroll").scrollable({
+
+
+
+	// basic settings
+	vertical: true,
+
+	// up/down keys will always control this scrollable
+	keyboard: 'static',
+	circular: true,
+next: '.scrollableOneNext', 
+prev: '.scrollableOnePrev'
+
+// main navigator (thumbnail images)
+}).navigator("#mainscroll_navi").autoscroll({
+	interval: 3000,
+	autoplay: true,	
+});
+
+});
+</script>
 
