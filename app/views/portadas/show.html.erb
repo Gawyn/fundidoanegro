@@ -22,14 +22,22 @@
 		<% i=1 %>
 		<table align="center">
 		<tr>
-		<% @tots.each do |a| %>
-			<td><%= link_to image_tag(a.image.url, :title => '<i>'+a.title+'</i><br> por '+a.autor, :size => "400x175"), a %></td>		
-  				<% if i==2 %>
+		<% @n=@tots.count %>
+		<% if 4 >= @n %>
+			<% @tots.each do |a| %>
+				<td><%= link_to image_tag(a.image.url, :title => '<i>'+a.title+'</i><br> por '+a.autor, :size => "400x175"), a %></td>		
+	  			<% if i==2 %>
 				</tr>
 				<% i=0 %>
 				<tr>
 				<% end %>
-			<% i=i+1 %>
+				<% i=i+1 %>
+			<% end %>
+		<% else %>
+			<td><%= link_to image_tag(@tots[0].image.url, :title => '<i>'+@tots[0].title+'</i><br> por '+@tots[0].autor, :size => "400x175"), @tots[0] %></td>	
+			<td><%= link_to image_tag(@tots[1].image.url, :title => '<i>'+@tots[1].title+'</i><br> por '+@tots[1].autor, :size => "400x175"), @tots[1] %></td></tr><tr>
+			<td><%= link_to image_tag(@tots[2].image.url, :title => '<i>'+@tots[2].title+'</i><br> por '+@tots[2].autor, :size => "400x175"), @tots[2] %></td>	
+			<td><%= link_to image_tag(@tots[3].image.url, :title => '<i>'+@tots[3].title+'</i><br> por '+@tots[3].autor, :size => "400x175"), @tots[3] %></td>
 		<% end %>
 		</tr>
 		</table>
