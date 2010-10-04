@@ -1,4 +1,4 @@
-ENV['GEM_HOME'] = '/home/gawyn/.gems'
+ENV['GEM_PATH'] = '/home/gawyn/.gems'
 require 'rubygems'
 Gem.clear_paths 
 # Set up gems listed in the Gemfile.
