@@ -2,14 +2,13 @@
 <html>
 <head>
   <title>Fundido a Negro.NET - Crítica y Análisis Cinematográfico</title>
-  <%= stylesheet_link_tag :all %>
 
 <script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAOSd9q8g3QaAV3PdMj3ACmxTouM8V7v86wSq8s RHv9OnhKYqKkRRoZmj11XpuH9QwHACeX7SrwWlPlg"></script>
   <script type="text/javascript">
     google.load("jquery", "1.4.2");
   </script>
 
-
+<%= stylesheet_link_tag 'application', 'scaffold', 'scrollable', 'topmenu' %>
 <%= javascript_include_tag "chrome" %>
 
 
@@ -30,12 +29,6 @@ var J = jQuery.noConflict();
 
   <%= csrf_meta_tag %>
   <%= include_tiny_mce_if_needed %>
-
-
-
-
-
-
 
 </head>
 <body>
