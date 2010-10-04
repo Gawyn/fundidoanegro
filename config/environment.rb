@@ -7,6 +7,6 @@ ENV['RAILS_ENV']= 'production'
 Fundidoanegro::Application.initialize!
 
 if ENV['RAILS_ENV'] == 'production'  # don't bother on dev
-  ENV['GEM_PATH'] = '/home/gawyn/.gems' #+ ':/usr/lib/ruby/gems/1.8'  # Need this or Passenger fails to start
+  ENV['GEM_PATH'] = '/home/USERNAME/.gems' + ':/usr/lib/ruby/gems/1.8'
 end
 
