@@ -13,3 +13,5 @@ class CreateEspecials < ActiveRecord::Migration
     drop_table :especials
   end
 end
+
+
