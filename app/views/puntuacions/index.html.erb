@@ -24,6 +24,9 @@
 		<% if p.nota==nil %>
 			<% p.nota=0 %>
 		<% end %>
+		<% if p.nota<0 | p.nota>10 %>
+			<% p.nota=0 %>
+		<% end %>
 		<% while (k+1)<p.nota %>
 			<%= image_tag "starsmall.png" %>
 			<% k=k+2 %>
