@@ -33,6 +33,20 @@ class Criticos::RegistrationsController < ApplicationController
     end
   end
 
+  def show
+    @critico = Critico.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @user }
+    end
+  end
+
+  # GET /users/1/edit
+  def edit
+    @critico = Critico.find(params[:id])
+  end
+
 
 
   def update

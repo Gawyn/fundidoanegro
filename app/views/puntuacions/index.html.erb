@@ -44,6 +44,7 @@
 <br>
 <% if critico_signed_in? %>
 <%= link_to 'New Film', new_film_path %>
+<% else %>
+<%= link_to "Login as crítico", new_critico_session_path %>
 <% end %>
-
 
