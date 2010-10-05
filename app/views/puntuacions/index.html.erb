@@ -24,7 +24,7 @@
 		<% if p.nota==nil %>
 			<% p.nota=0 %>
 		<% end %>
-		<% if p.nota<0 | p.nota>10 %>
+		<% if p.nota<0 | 10<p.nota %>
 			<% p.nota=0 %>
 		<% end %>
 		<% while (k+1)<p.nota %>
