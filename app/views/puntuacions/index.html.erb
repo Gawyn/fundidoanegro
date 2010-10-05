@@ -14,11 +14,15 @@
 		<% j=0 %>
 		<td style="border-width:1px;  border-color: #999; border-style: solid"><%= p.film.title %></td>
 	<% end %>
+<% if critico_signed_in? %>
 	<% if current_critico.id==p.critico_id %>
 		<td style="border-width:1px; border-color: #999; border-style: solid;border-left:0; border-top:0"><span id="<%= p.id %>" data-formtype="input" class="rest_in_place" data-url=<%="/puntuacions/" + p.id.to_s %> data-object="puntuacion" data-attribute="nota">
 	<% else %>
 	<td style="border-width:1px; border-color: #999; border-style: solid;border-left:0; border-top:0"><span>
 	<% end %>
+<% else %>
+	<td style="border-width:1px; border-color: #999; border-style: solid;border-left:0; border-top:0"><span>
+<% end %>
 		<% k=0 %>
 		<center>
 		<% if p.nota==nil %>
