@@ -1,11 +1,11 @@
 <div id = "contenedortextgeneral">
 <div id = "contenedortextgeneral2"><br>
-	<div id ="contenedortext"><br>
-	  <span style="font-size:20pt"><b><center><%= h(@articulo.title) %></center></b></span>
-	<br><br>
+	<div id ="contenedortext"><center><br><br>
+	  <span style="font-size:20pt"><b><center><%= h(@articulo.title) %></center></b></span></center>
+	<br>
 	  <%= raw(@articulo.body) %>
 	<br><br>
-Por <%= raw(@articulo.autor) %>
+Por <b><%= raw(@articulo.autor) %></b>
 <br>
 <% if admin_signed_in? | (user_signed_in? && current_user.id==@articulo.user.id) %>	<%= link_to 'Edit', edit_articulo_path(@articulo) %><% end %>
 	</div>

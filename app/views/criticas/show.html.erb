@@ -1,6 +1,6 @@
 <div id = "contenedortextgeneral">
 <div id = "contenedortextgeneral2"><br>
-	<div id ="contenedortext"><center><br>
+	<div id ="contenedortext"><center><br><br>
 		  <span style="font-size:20pt"><b><%= (@critica.title) %></b></span>
 		<br>
 		<%= @critica.title_film %> (<%= @critica.year %>, <%= @critica.director %>)
@@ -16,11 +16,11 @@
 		<br><br>
 			<%=image_tag(@critica.image.url) %>	
 </center>		
-		<br><br>
+		<br>
 		  <%= raw(@critica.body) %>
 
 		<br><br>
-		Por <%= raw(@critica.autor) %>
+		Por <b><%= raw(@critica.autor) %></b>
 
 		<br>
 <% if admin_signed_in? | (user_signed_in? && current_user.id==@critica.user.id) %><%= link_to 'Edit', edit_critica_path(@critica) %>
