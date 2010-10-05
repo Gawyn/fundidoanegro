@@ -1,6 +1,6 @@
 class CriticosController < ApplicationController
-	before_filter :authenticate_admin!, :except => [:edit]
-	before_filter :authenticate_critico!, :except => [:edit]
+	before_filter :authenticate_admin!, :except => [:sign_in,:edit]
+	before_filter :authenticate_critico!, :except => [:sign_in]
   # GET /users
   # GET /users.xml
   def index
