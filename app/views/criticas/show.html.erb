@@ -25,6 +25,22 @@
 		<br>
 <% if admin_signed_in? | (user_signed_in? && current_user.id==@critica.user.id) %><%= link_to 'Edit', edit_critica_path(@critica) %>
 <% end %>
+<br><br><br>
+<h2>Comentarios</h2>
+<div id="comments">
+	<%= render :partial => @critica.comments %>
+</div>
+
+<% form_for ([@critica, Comment.new], :remote => true) do |f| %>
+	<p>
+		<%= f.label :body, "New Comment" %><br />
+		<%= f.text_area :body %><br>
+		    <%= f.label :autor %><br />
+		    <%= f.text_field :autor %>
+	</p>
+	<p><%= f.submit "Add Comment" %></p>
+<% end %>
+	</div>
 	</div>
 	<div id="contenedorlink">
   		<% if !@criticasrelacionadas1.empty? %>

@@ -14,7 +14,10 @@ Fundidoanegro::Application.routes.draw do
   resources :criticas
 
   resources :especials
-
+  resources :articulos do resources :comments
+	end
+  resources :criticas do resources :comments
+	end
   resources :articulos
 
 devise_for :users

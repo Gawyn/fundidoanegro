@@ -5,4 +5,5 @@ class Critica < ActiveRecord::Base
 	 :path => ":attachment/critica/:id/:style.:extension"
 	belongs_to :especial
 	belongs_to :user
+	has_many :comments
 end
