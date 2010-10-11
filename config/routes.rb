@@ -1,5 +1,7 @@
 Fundidoanegro::Application.routes.draw do
 
+  resources :comments
+
   resources :puntuacions
 
   resources :films
