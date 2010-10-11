@@ -46,7 +46,7 @@
 <%= link_to "Login as user", new_user_session_path %>
 <% end %>
 <% if user_signed_in? %>
-<p><%= link_to "Logout as User", destroy_user_session_path %></p>
+<%= link_to "Logout as User", destroy_user_session_path %>
 <% end %>
 	</div>
 <script> 
