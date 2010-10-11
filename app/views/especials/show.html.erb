@@ -10,7 +10,7 @@
 		<% i=0 %>
 		<table align="center">
 		<tr>
-		<% @especial.criticas.each do |c| %>
+		<% @criticasesp.each do |c| %>
 			<td><div id="demo"><%= link_to image_tag(c.image.url, :title => '<i>'+c.title+'</i><br> por '+c.autor), c %></div></td>	
   				<% if i==3 %>
 				</tr>
