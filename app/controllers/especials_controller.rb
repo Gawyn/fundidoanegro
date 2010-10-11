@@ -19,7 +19,7 @@ class EspecialsController < ApplicationController
   # GET /especials/1.xml
   def show
     @especial = Especial.find(params[:id])
-
+	@criticas = Critica.find(:all, :conditions => {:especial_id => @especial.id}, :order => 'year')
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @especial }
