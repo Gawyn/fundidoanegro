@@ -1,7 +1,7 @@
 class PortadasController < ApplicationController
 	before_filter :authenticate_admin!, :except => [:index, :show]
   def show
-    	@articulos = Articulo.find(:all, :conditions => {:portada => true})
+    	@articulos = Articulo.find(:all, :conditions => {:portada => true}, :order => "created_at DESC")
     	@especials = Especial.find(:all, :conditions => {:portada => true})
     	@criticas = Critica.find(:all, :conditions => {:portada => true})
     	@noticias = Noticia.find(:all)
