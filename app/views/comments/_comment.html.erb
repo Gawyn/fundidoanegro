@@ -1,8 +1,8 @@
 <%= div_for comment do %>
 <p>
-	<strong>Posted <%= time_ago_in_words(comment.created_at) %>
+	<strong>Posteado <%= time_ago_in_words(comment.created_at) %>
 	ago</strong><br />
-	<strong>Escrit per <%= comment.autor %></strong><br />
+	<strong>Escrito por <%= comment.autor %></strong><br />
 	<%= h(comment.body) %>
 </p>
 <% end %>
