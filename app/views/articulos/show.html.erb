@@ -25,7 +25,7 @@ Por <b><%= raw(@articulo.autor) %></b>
 	</div>
 	<div id="contenedorlink">
   		<% if !@articulosrelacionados1.empty? %>
-			En este mismo especial:
+			En este mismo especial:<br><br>
 			<% @articulosrelacionados1.each do |a| %>
 <div id="demo"><%= link_to image_tag(a.image.url, :title => '<i>'+a.title+'</i><br> por '+a.autor, :size => "100x45"), a %></div>	
 				<br>

@@ -43,13 +43,13 @@
 	</div>
 	<div id="contenedorlink">
   		<% if !@criticasrelacionadas1.empty? %>
-		En este mismo especial:<br>
+		En este mismo especial:<br><br>
 			<% @criticasrelacionadas1.each do |a| %>
 				<div id="demo"><%= link_to image_tag(a.image.url, :title => '<i>'+a.title+'</i><br> por '+a.autor, :size => "50x72"), a %></div>
 			<% end %>
 		<% end %>
   		<% if !@criticasrelacionadas2.empty? %>
-			Del mismo autor:<br>
+			Del mismo autor:<br><br>
 			<% @criticasrelacionadas2.each do |a| %>
 				<div id="demo"><%= link_to image_tag(a.image.url, :title => '<i>'+a.title+'</i><br> por '+a.autor, :size => "50x72"), a %></div>
 			<% end %>
