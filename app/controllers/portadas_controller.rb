@@ -3,7 +3,7 @@ class PortadasController < ApplicationController
   def show
     	@articulos = Articulo.find(:all, :conditions => {:portada => true}, :order => "created_at DESC")
     	@especials = Especial.find(:all, :conditions => {:portada => true})
-    	@criticas = Critica.find(:all, :conditions => {:portada => true})
+    	@criticas = Critica.find(:all, :conditions => {:portada => true}, :order => "created_at DESC")
     	@noticias = Noticia.find(:all)
 	@articulosnot = Articulo.find(:all, :conditions => {:portada => false}, :order => "created_at DESC")
     	@especialsnot = Especial.find(:all, :conditions => {:portada => false}, :order => "created_at DESC")
