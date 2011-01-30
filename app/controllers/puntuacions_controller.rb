@@ -7,7 +7,10 @@ class PuntuacionsController < ApplicationController
 	@puntuaciones = Puntuacion.find(:all, :order => 'film_id DESC,critico_id')
 		@k=0;
 		@puntuaciones.each do |p|
+			@film = Film.find(:all, :conditions => {:id => p.film_id})
+			if @film[0].year==2011
 
+			end
 		end 
 	if critico_signed_in?
 	@critico = Critico.find_by_id(current_critico.id)
