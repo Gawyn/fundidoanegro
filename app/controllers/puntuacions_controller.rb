@@ -5,12 +5,10 @@ class PuntuacionsController < ApplicationController
   def index
 	@criticos = Critico.find(:all, :order => 'id')
 	@puntuaciones = Puntuacion.find(:all, :order => 'film_id DESC,critico_id')
-		@k=0;
 		@puntuaciones.each do |p|
 			@film = Film.find(:all, :conditions => {:id => p.film_id})
 			if @film[0].year!=2011
-				@puntuaciones.delete(p);
-				@k=@k+1
+				#@puntuaciones.delete(p);
 			end
 		end 
 	if critico_signed_in?
