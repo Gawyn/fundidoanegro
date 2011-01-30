@@ -9,7 +9,7 @@ class PuntuacionsController < ApplicationController
 		@puntuaciones.each do |p|
 			@film = Film.find(:all, :conditions => {:id => p.film_id})
 			if @film[0].year==2011
-				#@puntuaciones2[@k]=p;
+				@puntuaciones2.add(p);
 				@k=@k+1
 			end
 		end 
