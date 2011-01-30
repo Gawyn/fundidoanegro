@@ -56,8 +56,12 @@
 <br><br>
   		<% if !@criticasrelacionadas2.empty? %>
 			Del mismo autor:<br><br>
+			<% j=0 %>
 			<% @criticasrelacionadas2.each do |a| %>
+				<% if j<5 %>
 				<div id="demo"><%= link_to image_tag(a.image.url, :title => '<i>'+a.title+'</i><br> por '+a.autor, :size => "50x72"), a %></div>
+				<% end %>
+				<% j=j+1 %>
 			<% end %>
 		<% end %>
 	</div>
