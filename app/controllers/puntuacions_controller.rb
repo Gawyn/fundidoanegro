@@ -5,6 +5,14 @@ class PuntuacionsController < ApplicationController
   def index
 	@criticos = Critico.find(:all, :order => 'id')
 	@puntuaciones = Puntuacion.find(:all, :order => 'film_id DESC,critico_id')
+		@k=0;
+		@puntuaciones.each do |p|
+			@film = Film.find(:all, :conditions => {:id => p.film_id})
+			if @film[0].year==2011
+				@puntuaciones2[k]=p;
+				@k++
+			end
+		end 
 	if critico_signed_in?
 	@critico = Critico.find_by_id(current_critico.id)
 	end
