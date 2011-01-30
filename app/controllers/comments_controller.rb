@@ -24,7 +24,7 @@ skip_before_filter :verify_authenticity_token
     @comment.destroy
 
     respond_to do |format|
-      format.html { redirect_to(articulos_url) }
+      format.html { redirect_to(comments_url) }
       format.xml  { head :ok }
     end
   end
