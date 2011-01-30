@@ -16,6 +16,7 @@ class CommentsController < ApplicationController
 			format.js
 		end
   	end
+
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
@@ -24,6 +25,11 @@ class CommentsController < ApplicationController
       format.html { redirect_to(posts_url) }
       format.xml  { head :ok }
     end
+  end
+
+
+  def edit
+    @comment = Comment.find(params[:id])
   end
 def index
     @comments = Comment.all
