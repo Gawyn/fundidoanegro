@@ -8,8 +8,8 @@ class PuntuacionsController < ApplicationController
 		@k=0;
 		@puntuaciones.each do |p|
 			@film = Film.find(:all, :conditions => {:id => p.film_id})
-			if @film[0].year==2011
-				#@puntuaciones2[@k]=p;
+			if @film[0].year!=2011
+				@puntuaciones.delete(p);
 				@k=@k+1
 			end
 		end 
