@@ -1,6 +1,7 @@
 class ArticulosController < ApplicationController
   # GET /articulos
   # GET /articulos.xml
+skip_before_filter :verify_authenticity_token 
 	before_filter :authenticate_user!, :except => [:index, :show]
   uses_tiny_mce :options => {
                               :theme => 'advanced',

@@ -1,6 +1,7 @@
 class NoticiasController < ApplicationController
   # GET /noticias
   # GET /noticias.xml
+skip_before_filter :verify_authenticity_token 
 	before_filter :authenticate_user!, :except => [:show]
   uses_tiny_mce :options => {
                               :theme => 'advanced',
