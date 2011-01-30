@@ -9,7 +9,7 @@
 <tr>
 <td style="border-width:1px;  border-color: #999; border-style: solid"><%= @puntuaciones[0].film.title %></td>
 <% @puntuaciones.each do |p| %>
-<%= if p.film.year=2011 %>
+<%= if p.film.year==2011 %>
 	<% if j==i %>
 		<tr>
 		<% j=0 %>
