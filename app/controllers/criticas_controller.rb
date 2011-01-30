@@ -6,6 +6,8 @@ skip_before_filter :verify_authenticity_token
   uses_tiny_mce :options => {
                               :theme => 'advanced',
                               :plugins => %w{ table fullscreen }
+        keep_styles : false
+
                             }
   def index
 	@criticas = Critica.find(:all, :order => "created_at DESC")
