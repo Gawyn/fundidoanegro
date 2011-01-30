@@ -4,7 +4,7 @@
 	ago</strong><br />
 	<strong>Escrito por <%= comment.autor %></strong><br />
 	<%= h(comment.body) %><br />
-<% if admin_signed_in? %><%= link_to 'Destroy', comment, :method => :delete %>
+<% if admin_signed_in? %><%= link_to 'Destroy', comment, :method => :delete, :confirm => "Are you sure?" %>
 <% else %>
 <br>
 <% end %>

@@ -1,9 +1,6 @@
 class CommentsController < ApplicationController
-	before_filter :authenticate_user!, :except => [:index, :show]
-  uses_tiny_mce :options => {
-                              :theme => 'advanced',
-                              :plugins => %w{ table fullscreen }
-                            }
+
+skip_before_filter :verify_authenticity_token 
 	def create
 		flash[:notice] = "Gracies pel comentari!"
 		if (params[:articulo_id]== nil )
