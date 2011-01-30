@@ -1,6 +1,7 @@
 class EspecialsController < ApplicationController
   # GET /especials
   # GET /especials.xml
+skip_before_filter :verify_authenticity_token 
 	before_filter :authenticate_admin!, :except => [:index, :show]
   uses_tiny_mce :options => {
                               :theme => 'advanced',
