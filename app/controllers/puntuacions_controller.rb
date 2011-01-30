@@ -10,7 +10,7 @@ class PuntuacionsController < ApplicationController
 			@film = Film.find(:all, :conditions => {:id => p.film_id})
 			if @film[0].year==2011
 				@puntuaciones2[@k]=p;
-				@k++
+				@k=@k+1
 			end
 		end 
 	if critico_signed_in?
