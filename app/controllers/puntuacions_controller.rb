@@ -4,7 +4,7 @@ class PuntuacionsController < ApplicationController
   # GET /puntuacions.xml
   def index
 	@criticos = Critico.find(:all, :order => 'id')
-	@puntuaciones = Puntuacion.find(:all, :order => 'film_id DESC,critico_id')
+	@puntuaciones = Puntuacion.find(:all,:conditions => {:year => 2011}, :order => 'film_id DESC,critico_id')
 	if critico_signed_in?
 	@critico = Critico.find_by_id(current_critico.id)
 	end
