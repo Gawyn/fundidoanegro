@@ -7,12 +7,12 @@
 		<div id="demo"><%= link_to image_tag(a.image.url, :title => '<i>'+a.title+'</i><br> por '+a.autor, :size => "400x175"), a %></div>
 				<br>	
 		<% end %>
-		<% i=0 %>
+		<% i=1 %>
 		<table align="center">
 		<tr>
 		<% @criticasesp.each do |c| %>
 			<td><div id="demo"><%= link_to image_tag(c.image.url, :title => '<i>'+c.title+'</i><br> por '+c.autor), c %></div></td>	
-  				<% if i==3 %>
+  				<% if i==5 %>
 				<% i=0 %>
 				</tr>
 				<tr>
