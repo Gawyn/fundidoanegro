@@ -1,4 +1,4 @@
-<%= @title=raw(@articulo.title) %>
+<% content_for :html_title, raw(@articulo.title)+' - ' %>
 <div id = "contenedortextgeneral">
 <div id = "contenedortextgeneral2"><br>
 	<div id ="contenedortext"><center><br><br>
