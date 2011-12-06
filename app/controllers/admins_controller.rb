@@ -1,5 +1,4 @@
 class AdminsController < ApplicationController
-	before_filter :authenticate_admin!, :except => [:sign_in,:sign_out]
   # GET /admins
   # GET /admins.xml
   def index
