@@ -1,6 +1,7 @@
 class AdminsController < ApplicationController
   # GET /admins
   # GET /admins.xml
+	before_filter :authenticate_admin!, :except => [:sign_in, :sign_out]
   def index
     @admins = Admin.all
 
