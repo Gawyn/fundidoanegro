@@ -9,20 +9,7 @@
 Por <b><%= raw(@articulo.autor) %></b>
 <br>
 <% if admin_signed_in? | (user_signed_in? && current_user.id==@articulo.user.id) %>	<%= link_to 'Edit', edit_articulo_path(@articulo) %><br><% end %><br><br><br>
-<h2>Comentarios</h2>
-<div id="comments">
-	<%= render :partial => @articulo.comments %>
-</div>
 
-<% form_for ([@articulo, Comment.new], :remote => true) do |f| %>
-	<p>
-		<%= f.label :body, "New Comment" %><br />
-		<%= f.text_area :body %><br>
-		    <%= f.label :autor %><br />
-		    <%= f.text_field :autor %>
-	</p>
-	<p><%= f.submit "Add Comment" %></p>
-<% end %>
 	</div>
 	<div id="contenedorlink">
   		<% if !@articulosrelacionados1.empty? %>
