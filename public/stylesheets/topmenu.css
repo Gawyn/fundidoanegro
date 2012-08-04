@@ -11,12 +11,13 @@
 	height:0;
 	background:repeat-x top;
 	margin-left:25px;
+  width: 100%;
+  text-align: center;
 }
 #tab ul 
 {
 	list-style:none;
-	float:left;
-	margin:0;
+	margin: auto;
 	padding:0;
 }
 #tab li 
