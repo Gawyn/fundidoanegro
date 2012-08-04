@@ -27,11 +27,6 @@
 <% if admin_signed_in? | (user_signed_in? && current_user.id==@critica.user.id) %><%= link_to 'Edit', edit_critica_path(@critica) %>
 <% end %>
 <br><br><br>
-<h2>Comentarios</h2>
-<div id="comments">
-	<%= render :partial => @critica.comments %>
-</div>
-
 	</div>
 	<div id="contenedorlink">
   		<% if !@criticasrelacionadas1.empty? %>
