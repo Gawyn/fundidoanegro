@@ -5,7 +5,9 @@
 }
 #header
 {
-	height: 185px;
+	height: 100px;
+  padding-top: 20px;
+  padding-bottom: 30px;
 }
 #contenedor {
 	font-family:sans-serif;
